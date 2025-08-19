@@ -24,9 +24,8 @@ st.header("Transaction Details")
 # Using a form for better user experience and to control when prediction runs
 with st.form("prediction_form"):
     user_inputs = {}
-    cols = st.columns(2) # Create two columns for a more compact layout
+    cols = st.columns(2)
     for i, feature in enumerate(feature_names):
-        # Alternate columns for inputs
         with cols[i % 2]:
             # Use number_input for numerical features. Adjust format or step if needed.
             user_inputs[feature] = st.number_input(label=feature, format="%.6f", step=0.01)
@@ -40,11 +39,9 @@ if submitted:
     input_data = pd.DataFrame([user_inputs])
     
     # Apply log transformation to the 'Amount' feature
-    # np.log1p is used for log(1 + x) to handle zero values safely
     input_data['Amount'] = np.log1p(input_data['Amount'])
     
     # Make prediction
-    # Assuming the model's predict method returns 0 (Not Fraud) or 1 (Fraud)
     prediction = model.predict(input_data)[0]
     
     # Display the result

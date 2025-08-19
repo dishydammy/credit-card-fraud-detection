@@ -1,6 +1,6 @@
 # Credit Card Fraud Detection Project
 
-This project focuses on detecting fraudulent credit card transactions using machine learning models. The dataset contains transactions made by European cardholders over two days in September 2013, with 492 frauds out of 284,807 transactions, making it a highly imbalanced classification problem.
+This project focuses on detecting fraudulent credit card transactions using machine learning. The dataset contains transactions with 492 frauds out of 284,807 transactions, making it a highly imbalanced classification problem.
 
 ## Dataset
 
@@ -9,6 +9,9 @@ The dataset contains 284,807 transactions with 31 features:
 - **V1-V28**: Principal components obtained with PCA (anonymized for privacy)
 - **Amount**: Transaction amount
 - **Class**: Target variable (1 for fraud, 0 for legitimate)
+
+### Source
+The dataset was obtained from Kaggle: https://www.kaggle.com/mlg-ulb/creditcardfraud
 
 ### Key Characteristics
 - Highly imbalanced dataset (0.1727% fraud cases)
@@ -47,7 +50,7 @@ LightGBM with tuned hyperparameters achieved the best performance:
 |-------|-----------|--------|----------|-----|
 | Logistic Regression | 0.07 | 0.90 | 0.13 | 0.95 |
 | XGBoost | 0.91 | 0.82 | 0.86 | 0.96 |
-| LightGBM | 0.93 | 0.82 | 0.87 | 0.96 |
+| LightGBM | 0.93 | 0.82 | 0.86 | 0.98 |
 | Random Forest | 0.96 | 0.77 | 0.85 | 0.94 |
 
 ### Key Features
@@ -64,7 +67,7 @@ A Streamlit web application is included that allows real-time fraud prediction u
 
 ### How to Run
 ```bash
-pip install streamlit pandas scikit-learn lightgbm
+pip install -r requirements.txt
 streamlit run app.py
 ```
 
@@ -78,17 +81,11 @@ streamlit run app.py
 - `credit_card_fraud_notebook.ipynb`: Full analysis notebook
 - `app.py`: Streamlit web application
 - `lgb_model.pkl`: Trained LightGBM model
+ - `requirements.txt`: Python package requirements
 
 ## Requirements
-- Python 3.8+
-- pandas
-- numpy
-- scikit-learn
-- matplotlib
-- seaborn
-- xgboost
-- lightgbm
 - streamlit
+- lightgbm
 - joblib
 
 ## Usage
@@ -104,5 +101,17 @@ streamlit run app.py
 4. Tree-based models (XGBoost, LightGBM) outperform linear models
 5. Balancing the dataset improves recall but may reduce precision
 
+### Visual Evaluation
+Below are key model evaluation visuals included in the repository. They illustrate overall discrimination and precision/recall trade-offs for the best LightGBM model.
+
+Note: reported metrics are calculated on the held-out test set using the saved model `lgb_model.pkl`.
+
+- ROC Curve
+
+	![ROC Curve](assets/roc_curve.png)
+
+- Precision-Recall Curve
+
+	![Precision-Recall Curve](assets/precision_recall_curve.png)
+
 ---
-*Note: The dataset was anonymized for privacy protection.*
