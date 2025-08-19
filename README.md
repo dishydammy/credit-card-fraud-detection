@@ -2,7 +2,7 @@
 
 This project focuses on detecting fraudulent credit card transactions using machine learning. The dataset contains transactions with 492 frauds out of 284,807 transactions, making it a highly imbalanced classification problem.
 
-## 🔥 **LIVE DEMO: [Detect Credit Card Fraud in Real-Time!](https://credit-card-fraud-detection-dishyd.streamlit.app/)** 🔥
+## 💳 **LIVE APP: [Detect Credit Card Fraud in Real-Time!](https://credit-card-fraud-detection-dishyd.streamlit.app/)** 
 
 ## Dataset
 
