@@ -87,6 +87,9 @@ streamlit run app.py
 - streamlit
 - lightgbm
 - joblib
+- scikit-learn
+- pandas
+- nump
 
 ## Usage
 1. Clone the repository
