@@ -11,7 +11,7 @@ The dataset contains 284,807 transactions with 31 features:
 - **Class**: Target variable (1 for fraud, 0 for legitimate)
 
 ### Source
-The dataset was obtained from Kaggle: https://www.kaggle.com/mlg-ulb/creditcardfraud
+The dataset was obtained from Kaggle: https://www.kaggle.com/datasets/nishipatkar/credit-card-details/data
 
 ### Key Characteristics
 - Highly imbalanced dataset (0.1727% fraud cases)
@@ -97,9 +97,7 @@ streamlit run app.py
 ## Insights
 1. Fraud transactions tend to have higher amounts on average
 2. Class imbalance significantly affects model performance
-3. Feature engineering is crucial for this type of anomaly detection
-4. Tree-based models (XGBoost, LightGBM) outperform linear models
-5. Balancing the dataset improves recall but may reduce precision
+3. Tree-based models (XGBoost, LightGBM) outperform linear models
 
 ### Visual Evaluation
 Below are key model evaluation visuals included in the repository. They illustrate overall discrimination and precision/recall trade-offs for the best LightGBM model.
