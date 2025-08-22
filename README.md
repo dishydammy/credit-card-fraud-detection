@@ -67,12 +67,6 @@ The top 5 important features for fraud detection were:
 
 A Streamlit web application is included that allows real-time fraud prediction using the trained LightGBM model. Users can input transaction details (Time, V1-V28, Amount) and get an instant fraud prediction.
 
-### How to Run
-```bash
-pip install -r requirements.txt
-streamlit run app.py
-```
-
 ### Features
 - Input form for all 30 transaction features
 - Real-time fraud prediction
@@ -85,24 +79,33 @@ streamlit run app.py
 - `lgb_model.pkl`: Trained LightGBM model
  - `requirements.txt`: Python package requirements
 
-## Requirements
-- streamlit
-- lightgbm
-- joblib
-- scikit-learn
-- pandas
-- nump
-
-## Usage
-1. Clone the repository
-2. Install requirements
-3. Run the Streamlit app: `streamlit run app.py`
-4. Input transaction details to get fraud predictions
-
 ## Insights
 1. Fraud transactions tend to have higher amounts on average
 2. Class imbalance significantly affects model performance
 3. Tree-based models (XGBoost, LightGBM) outperform linear models
+
+## How to run locally
+
+1. Clone the repository  
+```bash
+   git clone https://github.com/your-username/credit-card-fraud-detection.git
+   cd credit-card-fraud-detection
+```
+
+2. Build the Docker image
+```bash
+docker build -t credit-card-fraud-detection .
+```
+
+3. Run the Docker container
+```bash
+docker run -p 8501:8501 credit-card-fraud-detection
+```
+
+4. Open the app in your browser at
+```
+http://localhost:8501
+```
 
 ### Visual Evaluation
 Below are key model evaluation visuals included in the repository. They illustrate overall discrimination and precision/recall trade-offs for the best LightGBM model.
